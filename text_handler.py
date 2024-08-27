@@ -10,6 +10,8 @@ def split_text(text, max_length, tolerance=5):
     Returns:
     list: A list of text chunks.
     """
+    text = text.strip()
+    print("Length of text: ", len(text))
     if len(text) <= max_length + tolerance:
         return [text]
     
@@ -19,5 +21,5 @@ def split_text(text, max_length, tolerance=5):
         chunks.append(text[:split_index])
         text = text[split_index:]
     
-    chunks.append(text)  # Add the remaining text as the last chunk
+    chunks.append(text)
     return chunks
